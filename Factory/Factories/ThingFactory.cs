@@ -5,12 +5,14 @@ using Factory.Models.Interfaces;
 namespace Factory.Factories {
 	public class ThingFactory : IThingFactory {
 		public IThing Create(ThingType type) {
-			if (type == ThingType.Thing)
-				return new Thing();
-			else if (type == ThingType.AnotherThing)
-				return new AnotherThing();
-			else
-				throw new System.Exception($"Unknown type '{type}'.");
+			switch (type) {
+				case ThingType.Thing:
+					return new Thing();
+				case ThingType.AnotherThing:
+					return new AnotherThing();
+				default:
+					throw new System.Exception($"Unknown type '{type}'.");
+			}
 		}
 
 		// ...
