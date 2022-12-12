@@ -2,12 +2,12 @@
 using System;
 
 namespace Factory.Models {
-	public class Thing : IThing {
+	public class AnotherThing : IThing {
 		public Guid ThingID { get; set; }
 		public string Name { get; set; }
 		// ...
 
-		public Thing() {
+		public AnotherThing() {
 			this.ThingID = Guid.NewGuid();
 		}
 	}

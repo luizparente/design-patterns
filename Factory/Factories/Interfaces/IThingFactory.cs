@@ -1,7 +1,9 @@
 ﻿using Factory.Models;
+using Factory.Models.Interfaces;
 
 namespace Factory.Factories.Interfaces {
 	public interface IThingFactory {
-		public Thing Create();
+		public IThing Create(ThingType type);
+		// ...
 	}
 }
